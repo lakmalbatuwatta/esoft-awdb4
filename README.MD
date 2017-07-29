@@ -6,6 +6,6 @@ Install Virtual Box
 
  https://www.virtualbox.org/wiki/Downloads
 
-Install Vagran
+Install Vagrant
 
  https://www.vagrantup.com/
