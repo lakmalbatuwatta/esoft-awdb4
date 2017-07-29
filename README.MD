@@ -13,26 +13,23 @@ Install Vagrant
 ## Run vagrant machine
 
 To Up vagrant machine / Power On
- $ vagrant up
+    $ vagrant up
 
 Let the install/ download OS for the first time 
 
 
 To Shutdown the vagrant machine
- $ vagrant halt
+    $ vagrant halt
 
 This command should run from host machine
 
 
 To connect with Ubuntu machine form your host machine
-
- $ vagrant ssh
+    $ vagrant ssh
 
 If it is remote location i.e AWS, Rackspace, Cloude9
- 
- ssh -i [pemfilelocation(.pem)] username@hostname
-
- $ ssh -i test.pem ubuntu@10.10.10.10
+    ssh -i [pemfilelocation(.pem)] username@hostname
+    $ ssh -i test.pem ubuntu@10.10.10.10
 
 
 
