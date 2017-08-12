@@ -57,3 +57,7 @@ sudo rm -r test3
 
 ll
 sudo rm <File Name> 
+
+
+Copy 
+sudo cp <origin> <destination>
