@@ -1,0 +1,59 @@
+cd /web/
+ll
+cd /
+ll
+cd web/
+clear
+exit
+cd /
+ls -al
+clear
+pwd
+cd web/
+pwd
+cd ..
+ll
+ls -al
+ls
+ls -al
+ll
+history
+date
+clear
+ll
+cd ust
+cd usr/
+ls -al
+cd ../
+cd web/
+pwd
+cd /usr/bin
+cd ../../
+cd web
+cd /usr/bin
+cd ../../web
+clear
+mkdir test
+ll
+sudo mkdir test2
+ll
+sudo test3
+sudo mkdir test3
+ll
+cd test
+mkdir child1
+cd child1/
+pwd
+history
+cd ../../
+ll
+
+
+Remove Direcotry use -r
+sudo rm test
+sudo rm -r test
+sudo rm -r test2
+sudo rm -r test3
+
+ll
+sudo rm <File Name> 
