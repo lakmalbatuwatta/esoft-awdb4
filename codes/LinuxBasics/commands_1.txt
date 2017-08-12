@@ -6,16 +6,16 @@ cd web/
 clear
 exit
 cd /
-ls -al
+ -al
 clear
 pwd
 cd web/
 pwd
 cd ..
 ll
-ls -al
-ls
-ls -al
+ -al
+
+ -al
 ll
 history
 date
@@ -23,7 +23,7 @@ clear
 ll
 cd ust
 cd usr/
-ls -al
+ -al
 cd ../
 cd web/
 pwd
@@ -61,3 +61,52 @@ sudo rm <File Name>
 
 Copy 
 sudo cp <origin> <destination>
+
+
+
+
+cd ../
+
+sudo rm first.txt 
+ 
+ll
+sudo cp texts texts2
+sudo cp -r texts texts2
+cd texts
+
+ll ../texts2/
+sudo mv first.txt firste.txt
+ll
+sudo mv firste.txt first.txt
+clear
+ll
+sudo mv first.txt texted.txt
+ll
+sudo mv texted.txt first.txt
+ll
+sudo mv ll
+ll
+clear
+ll
+sudo mv first.txt ../
+ll
+ll ../
+ll
+cd ..
+clear
+ll
+sudo mv first.txt texts/
+ll texts/
+ll
+sudo mv texts/first.txt ./
+ll
+sudo mv -r texts2 ./texts
+sudo mv texts2 ./texts
+ll texts
+ll
+ll texts/
+ll
+sudo vi first.txt 
+ll
+clear
+ll
