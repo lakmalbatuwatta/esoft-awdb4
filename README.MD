@@ -1,3 +1,3 @@
 # Linux Shell script operations
 
-[a link](https://www.tutorialspoint.com/unix/unix-basic-operators.htm)
+[Read More](https://www.tutorialspoint.com/unix/unix-basic-operators.htm)
