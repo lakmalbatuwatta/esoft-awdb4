@@ -77,19 +77,26 @@ Show Examples
 
 Operator	Description	Example
 + (Addition)	Adds values on either side of the operator	`expr $a + $b` will give 30
+
 - (Subtraction)	Subtracts right hand operand from left hand operand	`expr $a - $b` will give -10
+
 * (Multiplication)	Multiplies values on either side of the operator	`expr $a \* $b` will give 200
+
 / (Division)	Divides left hand operand by right hand operand	`expr $b / $a` will give 2
+
 % (Modulus)	Divides left hand operand by right hand operand and returns remainder	`expr $b % $a` will give 0
+
 = (Assignment)	Assigns right operand in left operand	a = $b would assign value of b into a
+
 == (Equality)	Compares two numbers, if both are same then returns true.	[ $a == $b ] would return false.
+
 != (Not Equality)	Compares two numbers, if both are different then returns true.	[ $a != $b ] would return true.
-It is very important to understand that all the conditional expressions should be inside square braces with spaces around them, for example [ $a == $b ] is correct whereas, [$a==$b] is incorrect.
 
 All the arithmetical calculations are done using long integers.
 
-Relational Operators
-Bourne Shell supports the following relational operators that are specific to numeric values. These operators do not work for string values unless their value is numeric.
+## Relational Operators
+
+Shell supports the following relational operators that are specific to numeric values. These operators do not work for string values unless their value is numeric.
 
 For example, following operators will work to check a relation between 10 and 20 as well as in between "10" and "20" but not in between "ten" and "twenty".
 
@@ -98,22 +105,29 @@ Assume variable a holds 10 and variable b holds 20 then −
 
 Operator	Description	Example
 -eq	Checks if the value of two operands are equal or not; if yes, then the condition becomes true.	[ $a -eq $b ] is not true.
+
 -ne	Checks if the value of two operands are equal or not; if values are not equal, then the condition becomes true.	[ $a -ne $b ] is true.
+
 -gt	Checks if the value of left operand is greater than the value of right operand; if yes, then the condition becomes true.	[ $a -gt $b ] is not true.
+
 -lt	Checks if the value of left operand is less than the value of right operand; if yes, then the condition becomes true.	[ $a -lt $b ] is true.
+
 -ge	Checks if the value of left operand is greater than or equal to the value of right operand; if yes, then the condition becomes true.	[ $a -ge $b ] is not true.
+
 -le	Checks if the value of left operand is less than or equal to the value of right operand; if yes, then the condition becomes true.	[ $a -le $b ] is true.
+
 It is very important to understand that all the conditional expressions should be placed inside square braces with spaces around them. For example, [ $a <= $b ] is correct whereas, [$a <= $b] is incorrect.
 
-Boolean Operators
-The following Boolean operators are supported by the Bourne Shell.
+## Boolean Operators
 
+The following Boolean operators are supported by the Bourne Shell.
 Assume variable a holds 10 and variable b holds 20 then −
 
 
 
 Operator	Description	Example
 !	This is logical negation. This inverts a true condition into false and vice versa.	[ ! false ] is true.
+
 -o	This is logical OR. If one of the operands is true, then the condition becomes true.	[ $a -lt 20 -o $b -gt 100 ] is true.
 -a	This is logical AND. If both the operands are true, then the condition becomes true otherwise false.	[ $a -lt 20 -a $b -gt 100 ] is false.
 String Operators
