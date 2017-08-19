@@ -1,9 +1,7 @@
 #!/bin/bash
 
-echo "Enter first name"
-read fname
+read -p "Enter first name: " fname
 
-echo "Last Name"
-read lname
+read -p "Last Name: " lname
 echo "Your name is"
 echo $fname $lname
