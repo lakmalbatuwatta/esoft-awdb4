@@ -2,7 +2,7 @@
 
 read -p "num" n1
 
-if [ $n1 -ge 5 ]
+if [ $n1 == 5 ];
 then
  echo "TRUE"
 
