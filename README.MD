@@ -1,46 +1,4 @@
-# Vagrant Setup
-
-## Installation 
-
-Install Virtual Box
-
- https://www.virtualbox.org/wiki/Downloads
-
-Install Vagrant
-
- https://www.vagrantup.com/
-
-## Run vagrant machine
-
-To Up vagrant machine / Power On
-    
-    $ vagrant up
-
-Let the install/ download OS for the first time 
-
-
-To Shutdown the vagrant machine
-    
-    $ vagrant halt
-
-This command should run from host machine
-
-
-To connect with Ubuntu machine form your host machine
-    
-    $ vagrant ssh
-
-If it is remote location i.e AWS, Rackspace, Cloude9
-    
-    ssh -i [pemfilelocation(.pem)] username@hostname
-    $ ssh -i test.pem ubuntu@10.10.10.10
-
-
-
-
-
-
-
+# Basic Linux programming operations
 
 There are various operators supported by each shell. We will discuss in detail about Bourne shell (default shell) in this chapter.
 
@@ -51,24 +9,20 @@ We will now discuss the following operators −
     Boolean Operators
     String Operators
     File Test Operators
-    Bourne shell didn't originally have any mechanism to perform simple arithmetic operations but it uses external programs, either awk or expr.
+    
+Bourne shell didn't originally have any mechanism to perform simple arithmetic operations but it uses external programs, either awk or expr.
 
+    #!/bin/sh
+    val=`expr 2 + 2`
+    echo "Total value : $val"
 
-  #!/bin/sh
-  val=`expr 2 + 2`
-  echo "Total value : $val"
-
-
-The above script will generate the following result −
-
-Total value : 4
 The following points need to be considered while adding −
 
 There must be spaces between operators and expressions. For example, 2+2 is not correct; it should be written as 2 + 2.
 
 The complete expression should be enclosed between ‘ ‘, called the inverted commas.
 
-Arithmetic Operators
+## Arithmetic Operators
 The following arithmetic operators are supported by Bourne Shell.
 
 Assume variable a holds 10 and variable b holds 20 then −
@@ -76,21 +30,22 @@ Assume variable a holds 10 and variable b holds 20 then −
 Show Examples
 
 Operator	Description	Example
-+ (Addition)	Adds values on either side of the operator	`expr $a + $b` will give 30
 
-- (Subtraction)	Subtracts right hand operand from left hand operand	`expr $a - $b` will give -10
+(+ Addition)	Adds values on either side of the operator	`expr $a + $b` will give 30
 
-* (Multiplication)	Multiplies values on either side of the operator	`expr $a \* $b` will give 200
+(- Subtraction)	Subtracts right hand operand from left hand operand	`expr $a - $b` will give -10
 
-/ (Division)	Divides left hand operand by right hand operand	`expr $b / $a` will give 2
+(* Multiplication)	Multiplies values on either side of the operator	`expr $a \* $b` will give 200
 
-% (Modulus)	Divides left hand operand by right hand operand and returns remainder	`expr $b % $a` will give 0
+ (\ Division)	Divides left hand operand by right hand operand	`expr $b / $a` will give 2
+
+(% Modulus)	Divides left hand operand by right hand operand and returns remainder	`expr $b % $a` will give 0
 
 = (Assignment)	Assigns right operand in left operand	a = $b would assign value of b into a
 
-== (Equality)	Compares two numbers, if both are same then returns true.	[ $a == $b ] would return false.
+(==  Equality)	Compares two numbers, if both are same then returns true.	[ $a == $b ] would return false.
 
-!= (Not Equality)	Compares two numbers, if both are different then returns true.	[ $a != $b ] would return true.
+(!=  Not Equality)	Compares two numbers, if both are different then returns true.	[ $a != $b ] would return true.
 
 All the arithmetical calculations are done using long integers.
 
