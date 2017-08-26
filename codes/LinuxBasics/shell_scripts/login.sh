@@ -1,26 +1,30 @@
 #!/bin/bash
 
-clear
-read -p "Enter user ID : " uId
+#user id
 
-adminUId="123ADM"
-manager="123MAN"
-anonymous="123ANO"
-
-
-if [ $uId == $adminUId ]
-then
-	echo "Wellcome admin"
-
-elif [ $uId == $manager ]
-then
-	echo "Wellcome Manager"
-else
-	echo "Anonymous"
-fi
+doLogin()
+{
+	
+	adminUId="123ADM"
+	manager="123MAN"
+	anonymous="123ANO"
 
 
+	if [ $1 == $adminUId ]
+	then
+		echo "Wellcome admin"
 
+	elif [ $1 == $manager ]
+	then
+		echo "Wellcome Manager"
+	else
+		echo "Anonymous"
+	fi
+
+
+
+}
+doLogin $1
 
 
    
