@@ -48,3 +48,10 @@ you need enable the site
     cd /etc/apache2/sites-available
     sudo a2ensite abc.dev.conf
     sudo service apache2 restart
+
+
+## Link Working directory and Apache2 working directory (for vagrant users)
+
+Creating symbolic link between your synced folder 
+
+    sudo ln -s /web/siteName /var/www
