@@ -55,3 +55,24 @@ you need enable the site
 Creating symbolic link between your synced folder 
 
     sudo ln -s /web/siteName /var/www
+
+
+
+## Installing and configuring PHP 
+
+PHP is the component of our setup that will process code to display dynamic content. It can run scripts, connect to our MySQL databases to get information, and hand the processed content over to our web server to display.
+
+We can once again leverage the apt system to install our components. We're going to include some helper packages as well, so that PHP code can run under the Apache server and talk to our MySQL database:
+
+    sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
+
+
+In most cases, we'll want to modify the way that Apache serves files when a directory is requested. Currently, if a user requests a directory from the server, Apache will first look for a file called index.html. We want to tell our web server to prefer PHP files, so we'll make Apache look for an index.php file first.
+
+
+    sudo nano /etc/apache2/mods-enabled/dir.conf
+
+    <IfModule mod_dir.c>
+        DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+    </IfModule>
+
