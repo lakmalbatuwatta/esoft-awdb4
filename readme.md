@@ -1,85 +1,27 @@
-# Setup Dev enviornment for PHP
 
-## Install Apache2
+# OOP with PHP
+Class − This is a programmer-defined data type, which includes local functions as well as local data. You can think of a class as a template for making many instances of the same kind (or class) of object.
 
-To Install Apache 
+Object − An individual instance of the data structure defined by a class. You define a class once and then make many objects that belong to it. Objects are also known as instance.
 
-sudo apt-get install apache2
+Member Variable − These are the variables defined inside a class. This data will be invisible to the outside of the class and can be accessed via member functions. These variables are called attribute of the object once an object is created.
 
+Member function − These are the function defined inside a class and are used to access object data.
 
-When you are installing apache2 default documnt root will be 
-/var/www
-This is place where you put your application files
+Inheritance − When a class is defined by inheriting existing function of a parent class then it is called inheritance. Here child class will inherit all or few member functions and variables of a parent class.
 
+Parent class − A class that is inherited from by another class. This is also called a base class or super class.
 
-##Configur Locan DNS
+Child Class − A class that inherits from another class. This is also called a subclass or derived class.
 
-By Changing Host file
-In windows
-C:/System32/drivers/etc/host file
+Polymorphism − This is an object oriented concept where same function can be used for different purposes. For example function name will remain same but it make take different number of arguments and can do different task.
 
-In Mac
-/etc/host
+Overloading − a type of polymorphism in which some or all of operators have different implementations depending on the types of their arguments. Similarly functions can also be overloaded with different implementation.
 
+Data Abstraction − Any representation of data in which the implementation details are hidden (abstracted).
 
-##  Creating multisite on apcche2
+Encapsulation − refers to a concept where we encapsulate all the data and member functions together to form an object.
 
-Locate 000-default.conf file wich is in /etc/apache2/sites-available
+Constructor − refers to a special type of function which will be called automatically whenever there is an object formation from a class.
 
-create your site configuration file based on that default .conf file
-
-    sudo cp 000-default.conf abc.dev.conf
-
-you need to edit your site configuration file in my case abc.dev.conf
-
-    ....
-    ServerName abc.dev
-    ....
-    DocumentRoot /var/www/abc.dev
-
-
-create folder with same name what you had on your configuration file under /var/www directory
-
-    /var/www/abc.dev
-
-
-you need enable the site 
-
-    cd /etc/apache2/sites-available
-    sudo a2ensite abc.dev.conf
-    sudo service apache2 restart
-
-
-## Link Working directory and Apache2 working directory (for vagrant users)
-
-Creating symbolic link between your synced folder 
-
-    sudo ln -s /web/siteName /var/www
-
-
-
-## Installing and configuring PHP 
-
-PHP is the component of our setup that will process code to display dynamic content. It can run scripts, connect to our MySQL databases to get information, and hand the processed content over to our web server to display.
-
-We can once again leverage the apt system to install our components. We're going to include some helper packages as well, so that PHP code can run under the Apache server and talk to our MySQL database:
-
-    sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
-
-
-In most cases, we'll want to modify the way that Apache serves files when a directory is requested. Currently, if a user requests a directory from the server, Apache will first look for a file called index.html. We want to tell our web server to prefer PHP files, so we'll make Apache look for an index.php file first.
-
-
-    sudo nano /etc/apache2/mods-enabled/dir.conf
-
-    <IfModule mod_dir.c>
-        DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
-    </IfModule>
-
-
-## Installing mysql
-
-When your installing mysql giv root password as you preferd 
-
-    sudo apt-get install mysql-server
-
+Destructor − refers to a special type of function which will be called automatically whenever an object is deleted or goes out of scope
