@@ -76,3 +76,10 @@ In most cases, we'll want to modify the way that Apache serves files when a dire
         DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
     </IfModule>
 
+
+## Installing mysql
+
+When your installing mysql giv root password as you preferd 
+
+    sudo apt-get install mysql-server
+
