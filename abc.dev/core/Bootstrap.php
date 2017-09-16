@@ -17,7 +17,6 @@ namespace Core;
 
 
 
-use App\Controller;
 use Lib\Util;
 require_once './lib/Util.php';
 
@@ -35,7 +34,12 @@ class Bootstrap
 
             //Allways first parameter will be controller
 
-            $this->invokeController($_explodedUrl[0]);
+            $controller     = $this->invokeController($_explodedUrl[0]);
+
+            $this->invokeActionMethods($controller,$_explodedUrl);
+
+
+
         }
 
         else{
@@ -57,25 +61,57 @@ class Bootstrap
         $fileName = $_contollerName.'.php';
        //echo  $_contollerName."<br/>";
 
-
-
-        // require
-
         $fileName = './app/controller/'.$fileName;
 
-        echo $fileName;
+        if(file_exists($fileName)){
+            //echo $fileName;
+            require_once $fileName;
+            $class= "App\\Controller\\";
+            $class .= $_contollerName;
+            return new $class();
+        }
+
+        $this->error();
+
+
+
+    }
+
+    /**
+     * Handle Errors
+     */
+    private function error(){
+
+
+        $fileName = './app/controller/ErrorController.php';
+
+        //echo $fileName;
 
         require_once $fileName;
+        $class= "App\\Controller\\ErrorController";
+
+        $object = new $class();
+        $object->error404();
+
+    }
+
+    /**
+     * @param $controller Controller Class object
+     * @param $urlDataSet
+     */
+    private function invokeActionMethods($controller,$urlDataSet){
 
 
-        $c= "UsersController";
-        $object = new $c;
+        if(isset($urlDataSet[1])){
 
+            $_functionName = $urlDataSet[1];
+            $controller->$_functionName();
 
+            //function_exists()
 
+            
 
-
-
+        }
 
 
 

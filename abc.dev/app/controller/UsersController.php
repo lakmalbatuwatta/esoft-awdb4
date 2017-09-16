@@ -16,7 +16,15 @@ class UsersController
 
     public function __construct()
     {
-        echo "This Users controller constructor";
+    }
+
+
+    public function profile(){
+        echo "This is Profile Function";
+    }
+
+    public function edit(){
+        echo "this is edit function";
     }
 
 }
