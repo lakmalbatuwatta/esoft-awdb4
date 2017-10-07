@@ -21,7 +21,7 @@ class HomeController
     //default index function
 
     public function index(){
-        echo "default index function";
+        echo "default index function with parameter->";
     }
 
 }

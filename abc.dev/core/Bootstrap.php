@@ -98,13 +98,30 @@ class Bootstrap
      */
     private function invokeActionMethods($controller,$urlDataSet){
 
-        if(isset($urlDataSet[1])){
-            $_functionName = $urlDataSet[1];
-            $controller->$_functionName();
-            //function_exists()
-        }else{
-            $controller->index();
+
+        //Default Index action function will invoke when Action function not defined in the URL as
+        //second parameter
+
+        echo "<pre/>";
+        print_r($urlDataSet);
+        $methodName = (isset($urlDataSet[1]))?$urlDataSet[1]:'index';
+
+        if(!method_exists($controller,$methodName)){
+            $this->error();
+            return ;
         }
+
+        if(isset($urlDataSet[2])){
+            $controller->{$methodName}($urlDataSet[2]);
+
+        }else{
+            $controller->{$methodName}();
+        }
+
+
+
+
+
 
 
 

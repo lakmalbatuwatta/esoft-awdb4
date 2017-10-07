@@ -19,8 +19,8 @@ class UsersController
     }
 
 
-    public function index(){
-        echo "This is Index function from the user";
+    public function index($userId){
+        echo "This is Index function from the user-->".$userId;;
     }
 
     public function profile(){
