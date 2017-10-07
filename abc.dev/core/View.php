@@ -14,16 +14,30 @@ class View
 
 
 
-   public function __construct($layout)
+    public function __construct($layout)
     {
-        $this->layout = $layout;
+
+        $layoutName = 'layout/'.$layout.'.layout';
+        $this->renderView($layoutName);
     }
 
 
 
-    public function getLayout(){
 
-        echo $this->layout;
+    public function render($viewName){
+
+        return $this->renderView($viewName);
+
+    }
+
+    private function renderView($viewName){
+        $viewFileName =  './app/view/'.$viewName.'.php';
+
+        if(!file_exists($viewFileName)){
+            echo "Cannot fine any View";
+        }
+
+        require_once $viewFileName;
     }
 
 

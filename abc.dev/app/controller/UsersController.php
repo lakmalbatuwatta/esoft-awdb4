@@ -18,7 +18,7 @@ class UsersController extends Controller
 
     public function __construct()
     {
-
+        parent::__construct();
 
     }
 
@@ -27,6 +27,8 @@ class UsersController extends Controller
 
         $this->isLogged();
         //$this->render('viewname');
+
+        $this->render('user_index.page');
     }
 
     public function profile(){

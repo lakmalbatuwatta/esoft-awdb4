@@ -10,14 +10,13 @@ namespace core;
 
 
 
-class BaseController 
+class BaseController extends View
 {
 
-    protected $layout = NULL;
-    function __construct()
-    {
 
-        $this->view = new View($this->layout);
+    function __construct($layout)
+    {
+        parent::__construct($layout);
 
     }
 

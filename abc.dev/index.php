@@ -16,4 +16,4 @@ require_once 'core/BaseController.php';
 
 $bootstrap = new Core\Bootstrap();
 
-new Core\BaseController();
+

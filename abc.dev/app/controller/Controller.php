@@ -12,14 +12,16 @@ use core\BaseController;
 class Controller extends  BaseController
 {
 
-    protected $layout = "theme1";
+    private $layout = "theme1";
 
-
+    function __construct()
+    {
+        parent::__construct($this->layout);
+    }
 
     public function isLogged(){
 
-        $this->view->getLayout();
-        return "true";
+
     }
 
 }
