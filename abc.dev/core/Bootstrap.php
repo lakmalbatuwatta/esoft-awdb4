@@ -17,8 +17,10 @@ namespace Core;
 
 
 
+use App\Controller\Controller;
 use Lib\Util;
 require_once './lib/Util.php';
+
 
 
 class Bootstrap
@@ -35,6 +37,8 @@ class Bootstrap
             //Allways first parameter will be controller
             $controller     = $this->invokeController($_explodedUrl[0]);
             $this->invokeActionMethods($controller,$_explodedUrl);
+
+
 
 
         }else{
@@ -58,13 +62,18 @@ class Bootstrap
         $fileName = $_contollerName.'.php';
        //echo  $_contollerName."<br/>";
 
+
+
         $fileName = './app/controller/'.$fileName;
 
         if(file_exists($fileName)){
-            //echo $fileName;
+            //Invoking base controller
+            require_once './app/controller/Controller.php';
             require_once $fileName;
             $class= "App\\Controller\\";
             $class .= $_contollerName;
+
+
             return new $class();
         }
 
@@ -101,9 +110,6 @@ class Bootstrap
 
         //Default Index action function will invoke when Action function not defined in the URL as
         //second parameter
-
-        echo "<pre/>";
-        print_r($urlDataSet);
         $methodName = (isset($urlDataSet[1]))?$urlDataSet[1]:'index';
 
         if(!method_exists($controller,$methodName)){

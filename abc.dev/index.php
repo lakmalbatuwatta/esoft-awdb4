@@ -9,9 +9,11 @@ ini_set('display_errors',1);
 error_reporting(-1);
 
 require_once 'core/Bootstrap.php';
+require_once 'core/View.php';
+require_once 'core/BaseController.php';
 
 
-echo "<pre/>";
+
 $bootstrap = new Core\Bootstrap();
 
-
+new Core\BaseController();

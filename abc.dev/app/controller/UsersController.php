@@ -10,17 +10,23 @@
 namespace App\Controller;
 
 
-class UsersController
+
+
+class UsersController extends Controller
 {
 
 
     public function __construct()
     {
+
+
     }
 
 
-    public function index($userId){
-        echo "This is Index function from the user-->".$userId;;
+    public function index($userId = null){
+
+        $this->isLogged();
+        //$this->render('viewname');
     }
 
     public function profile(){
