@@ -14,20 +14,30 @@ class View
 
 
 
+    private $content = NULL;
+
     public function __construct($layout)
     {
-
-        $layoutName = 'layout/'.$layout.'.layout';
-        $this->renderView($layoutName);
+        $this->layout = $layout;
     }
 
 
 
+    private function renderLayout(){
+        $layoutName = 'layout/'.$this->layout.'.layout';
+        $this->renderView($layoutName);
+    }
 
-    public function render($viewName){
+    public function render($name){
 
-        return $this->renderView($viewName);
+            $this->content   = $name;
+            $this->renderLayout();
 
+    }
+
+    public function content(){
+
+        $this->renderView($this->content);
     }
 
     private function renderView($viewName){
