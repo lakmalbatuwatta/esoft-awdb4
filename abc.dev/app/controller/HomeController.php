@@ -14,7 +14,14 @@ class HomeController
 
     function __construct()
     {
-        echo "This is Home Controller";
+        //echo "This is Home Controller";
+    }
+
+
+    //default index function
+
+    public function index(){
+        echo "default index function";
     }
 
 }

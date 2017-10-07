@@ -19,6 +19,10 @@ class UsersController
     }
 
 
+    public function index(){
+        echo "This is Index function from the user";
+    }
+
     public function profile(){
         echo "This is Profile Function";
     }

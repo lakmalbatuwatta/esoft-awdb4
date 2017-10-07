@@ -33,17 +33,14 @@ class Bootstrap
             $_explodedUrl = Util::explode('/',$_GET['url']);
 
             //Allways first parameter will be controller
-
             $controller     = $this->invokeController($_explodedUrl[0]);
-
             $this->invokeActionMethods($controller,$_explodedUrl);
 
 
-
-        }
-
-        else{
-            echo "Call Default Controller when URL not defined";
+        }else{
+            //Invoke default home page when browser load the application
+            $controller     = $this->invokeController('home');
+            $controller->index();
         }
 
         //
@@ -101,17 +98,14 @@ class Bootstrap
      */
     private function invokeActionMethods($controller,$urlDataSet){
 
-
         if(isset($urlDataSet[1])){
-
             $_functionName = $urlDataSet[1];
             $controller->$_functionName();
-
             //function_exists()
-
-            
-
+        }else{
+            $controller->index();
         }
+
 
 
 
