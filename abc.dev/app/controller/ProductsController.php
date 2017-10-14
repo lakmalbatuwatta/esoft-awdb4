@@ -9,12 +9,15 @@
 namespace App\Controller;
 
 
-class ItemsController
+class ProductsController extends Controller
 {
 
     function __construct()
     {
-        echo "This is Items controller";
+        parent::__construct();
+    }
+    public function index(){
+        $this->render('product_index.page');
     }
 
 }

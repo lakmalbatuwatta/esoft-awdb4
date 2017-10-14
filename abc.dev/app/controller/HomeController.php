@@ -9,19 +9,19 @@
 namespace App\Controller;
 
 
-class HomeController
+class HomeController extends Controller
 {
 
     function __construct()
     {
-        //echo "This is Home Controller";
+       parent::__construct();
     }
 
 
     //default index function
 
     public function index(){
-        echo "default index function with parameter->";
+        $this->render('home_index.page');
     }
 
 }

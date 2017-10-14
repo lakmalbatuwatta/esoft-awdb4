@@ -50,6 +50,15 @@ class View
         require_once $viewFileName;
     }
 
+    /**
+     * Include Templete blocks
+     * @param $sectionName
+     */
+    public function includes($sectionName){
+        $sectionName = 'includes/'.$sectionName.'.inc';
+        $this->renderView($sectionName);
+    }
+
 
 
 }
