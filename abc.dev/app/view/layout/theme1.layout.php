@@ -12,7 +12,7 @@
 <?php
 $this->includes('header');
 ?>
-<div id="container">
+<div id="container" class="wrapper clearfix">
     <?php
         $this->content();
     ?>

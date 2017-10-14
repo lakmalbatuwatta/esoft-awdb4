@@ -6,11 +6,12 @@
  * Date: 9/9/17
  * Time: 1:07 PM
  */
-require_once './core/Model.php';
-class Items extends Model
+namespace Model;
+use \Core\Model;
+class Category extends Model
 {
 
-    protected  $table ="items";
+    protected  $table ="categories";
     function __construct()
     {
        parent::__construct();
@@ -18,7 +19,9 @@ class Items extends Model
 
     public function getItems(){
 
-       return $this->find();
+
+       return $this->find(['title']);
+
     }
 
 

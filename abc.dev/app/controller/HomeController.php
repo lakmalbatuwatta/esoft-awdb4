@@ -7,6 +7,8 @@
  */
 
 namespace App\Controller;
+require_once 'app/model/Category.php';
+
 
 
 class HomeController extends Controller
@@ -21,6 +23,13 @@ class HomeController extends Controller
     //default index function
 
     public function index(){
+
+        $category = new \Model\Category();
+        $this->categories = $category->getItems();
+
+
+
+
         $this->render('home_index.page');
     }
 
