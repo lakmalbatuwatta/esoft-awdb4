@@ -1,0 +1,1 @@
+<h1>This is Test Blade Template</h1>
